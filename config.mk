@@ -1,6 +1,3 @@
-# Anything including updatable_apex.mk should have done so by now.
-ifneq ($(TARGET_SUPPORTS_PREBUILT_UPDATABLE_APEX), false)
-
 # FIXME -- DeviceLock ModulePrebuilt is only planned to be released for QPR2
 DISABLE_DEXPREOPT_CHECK := true
 
@@ -28,7 +25,7 @@ ifneq ($(MAINLINE_INCLUDE_VIRT_MODULE), false)
 MAINLINE_INCLUDE_VIRT_MODULE := true
 endif
 
-$(call inherit-product-if-exists, vendor/mainline_modules/build/mainline_modules.mk)
+$(call inherit-product, vendor/mainline_modules/build/mainline_modules.mk)
 
 ifeq ($(TARGET_SUPPORTS_NOW_PLAYING), true)
 PRODUCT_PACKAGES += \
@@ -46,4 +43,3 @@ PRODUCT_PACKAGES += \
 	CellBroadcastReceiverOverlayExtra \
 	CellBroadcastServiceOverlayExtra \
 	GoogleConfigOverlayExtra
-endif
