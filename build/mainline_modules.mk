@@ -275,8 +275,8 @@ PRODUCT_ARTIFACT_PATH_REQUIREMENT_ALLOWED_LIST += \
     system_ext/apex/com.google.android.compos.apex
 endif
 
-# Optional WiFi
-MAINLINE_INCLUDE_WIFI_MODULE ?= false
+# WiFi
+MAINLINE_INCLUDE_WIFI_MODULE ?= true
 ifeq ($(MAINLINE_INCLUDE_WIFI_MODULE),true)
 SOONG_CONFIG_wifi_module_source_build := false
 
